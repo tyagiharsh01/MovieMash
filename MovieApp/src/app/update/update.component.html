@@ -1,0 +1,65 @@
+<form [formGroup]="registrationData" (ngSubmit)="setValues()">
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Name" id="name" formControlName="name">
+        <i class="fa fa-user" style="margin-left: -30px;"></i>
+    </mat-form-field>
+    <div
+        *ngIf="registrationData.get('name')?.invalid && (registrationData.get('name')?.dirty || registrationData.get('name')?.touched)">
+        <div *ngIf="name?.errors?.['required']">
+            <p>Name is <strong>required</strong></p>
+        </div>
+        <div *ngIf="name?.errors?.['pattern']">
+            <p>Name Should contain only alphabets</p>
+        </div>
+        <div *ngIf="name?.errors?.['maxlength']">
+            <p>Only 30 characters allowed</p>
+        </div>
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Phone Number</mat-label>
+        <input type="text" matInput placeholder="" id="phoneNumber" formControlName="phoneNo">
+        <i class="fa fa-phone" style="margin-left: -30px;"></i>
+    </mat-form-field>
+    <div
+        *ngIf="registrationData.get('phoneNo')?.invalid && (registrationData.get('phoneNo')?.dirty || registrationData.get('phoneNo')?.touched)">
+        <div *ngIf="phoneNo?.errors?.['required']">
+            <p>Phone Number is <strong>required</strong></p>
+        </div>
+        <div *ngIf="phoneNo?.errors?.['pattern']">
+            <p>Valid Phone Number contains 10 digits starting with 7/8/9</p>
+        </div>
+    </div>
+
+    <div class="boxDesign">
+        <label for="image">Profile Picture</label>
+        <input type="file" accept="images/*" (change)="onImageUpload($event)">
+        <i class="fa fa-upload" style="margin-left: 20px; color: black;"></i>
+    </div><br>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="{{ passwordType }}" matInput placeholder="" id="password2" formControlName="password">
+        <i class="far fa-eye" (click)="togglePasswordVisibility()" [class.fa-eye-slash]="!hide"
+            style="margin-left: -30px; cursor: pointer;"></i>
+    </mat-form-field>
+    <div
+        *ngIf="registrationData.get('password')?.invalid && (registrationData.get('password')?.dirty || registrationData.get('password')?.touched)">
+        <div *ngIf="password?.errors?.['required']">
+            <p>Password is <strong>required</strong></p>
+        </div>
+        <div *ngIf="password?.errors?.['pattern']">
+            <p>Password must have min 8 letters Password, with atleast a symbol,<br>
+                upper and lower case letters and a number</p>
+        </div>
+    </div>
+
+
+    <div>
+        <p id="text" (click)="goToFPass()">Reset Password?</p>
+    </div><br>
+
+    <button class="btn btn-primary" type="submit" id="btn" color="primary" [disabled]="!registrationData.valid"
+        (click)="update()">update</button>
+</form>

@@ -1,0 +1,35 @@
+
+#spring.application.name=MovieGatewayService
+#spring.main.web-application-type=reactive
+#
+#
+#
+#
+#eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+#eureka.client.fetch-registry=true
+#eureka.client.register-with-eureka=true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://movieeurekaservice:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+spring:
+  application:
+    name: MovieGatewayService
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+server:
+  port: 4040   # Replace 4040 with your desired custom port number
+

@@ -1,0 +1,144 @@
+.container-fluid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    background-image: url("https://wallpaperaccess.com/full/806427.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.example-card {
+    max-width: 500px;
+    text-align: left;
+    background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NDg0NDisZFRkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAK4BIgMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAACAQADBAf/xAAfEAEBAQEBAQADAAMAAAAAAAAAARESAhMDIWEiMVH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APpjMyoysoMrRQaQpGkKQExcVZATFxZCkAcXCxcFHFwsXAGRsLGwAxsdMTADEx0xMAMTDxMAMTDxMEc7EsOxLACxMKxLABDo0BQq2ALMwMzMDM0WAqxIUBoUSFAXFkSFAaQpGkKQEkKRpCkFSQsWRZATGwsXAHGw8bADGw8bADEw8TACxLDxLAc7EsdLBsBzsSw7BsECxLDo0Ao062AGDSqUBRUBmZgYkiwFixosBYUSFAWFEhQGhSJDgrSFI0KQGkWRoUgJhY0hYA4uLi4A4mHjYAYmHYlgOdiWHYlBzsSw7BoBYNOjQCjTo0QKNOjQGjSqUBRalBGZgWFEhT9AuLEhQFhRIUBYsSFBVhRIUAoUGFAWFEhQFixosBsXFUBxsJAHBp0aA0aVSgFGnRoBRpVKAUaVGgNGlRog0aVGglEqmALFzUA/9NEhQFhRIcBpCkaQpBWjLi4DQoKwDhQYUAoQQoBxYMWUDUNWUCRNbQajVEEqVaNBKNWjQGjSo0Bo0qNAaNKjRBo0qNBKijQXqojA6QpEhQCkKRIcgLIUjSHIKOLhY2AFjRbEAosCFKBwpQlWUDlXQ1dA10NXQLW0dTQLUtTU0GtS1NS0Go1rUtBKNW0bQSjVo0RKNKpYAVKViWANEsTARC5YDhwIfkDhwIcA4cCFBSZmBKFOhQRZRrSg6SrKEKAWrosB62hraB62hraBamjraC6lqagNalrJQSjSo0EXGkOQA5Xl0kbAcb5G+Xe+QsBwvlpHT1EkEHlnTGBxhQIUB1hxzhwHSFK5ylBT1hbQWjWtG0EqwSgFDgeTgKzMCUaVCg2to1gJkUFZmBKNIaCUSqQC8w5E8x0kBMXDkbAcrA9R2sD1AcPUGR09QfMEXGLFByniHPETVFKeYUkBgdP02wcXAXqJqyFIDn+24dZFkBy+az8bti4DlPC8V1xQcuK3DsoOHzb5PQ36B5/k3yej9MDzfJvk9CA8/wA24d8TAcOBvh6LEsB574G+HpsGwHDmt/l/12xLAcu/TfX0diWAP1o38tK+UvkBv5P4F9/w+U5ETr+IvLAaoopKOtoGoaugerrnq6Dpq6562g662uetoOvS9OXTdA69L049L0Dr03Tl03QOvTdOXTdA69J059J0Dr0nTn03QOmpodJoHqaGtoFqUdbQVKmpoLUramg1RtQGZmETW0dYD1tHWA9bRjaB62hraKeroa2getoa2g6a2hrAet0GtoHraGtoHraGtoHrdBraB63Qa2gWto6mgetoa2gWto6gFraOtoLraOtoi6yJoLrIgP/Z");
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.example-form {
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+#btn {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    color: white;
+    border: 2px solid rgb(78, 78, 246);
+    background-color: rgb(78, 78, 246);
+    border-radius: 30px;
+}
+
+.boxDesign {
+    padding: 15px;
+    text-align: left;
+    font-size: 15px;
+    color: gray;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 1px solid grey;
+    background-color: rgb(248, 246, 246);
+}
+
+p {
+    color: red;
+}
+#text{
+    color: blue;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+#logo {
+    border-radius: 80px;
+    margin: auto;
+    margin-top: -25px;
+}
+
+.cont2 {
+    width: 330px;
+    border-radius: 30px;
+    height: 350px;
+    color: white;
+    padding: 35px;
+    font-family: 'Poppins';
+    text-align: center;
+    border: 2px solid white;
+}
+
+.cont2 p {
+    font-size: 18px;
+    color: aqua;
+    padding: 20px;
+    padding-bottom: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#btn2 {
+    font-size: 2em;
+    letter-spacing: 12px;
+    color: #0e3742;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    18%,
+    20%,
+    50.1%,
+    60%,
+    65.1%,
+    80%,
+    90.1%,
+    92% {
+        color: #0e3742;
+        box-shadow: none;
+    }
+
+    18.1%,
+    20.1%,
+    30%,
+    50%,
+    60.1%,
+    65%,
+    80.1%,
+    90%,
+    92.1%,
+    100% {
+        color: #fff;
+        box-shadow: 0 0 10px #03bcf4,
+            0 0 20px #03bcf4,
+            0 0 40px #03bcf4,
+            0 0 80px #03bcf4,
+            0 0 160px #03bcf4,
+    }
+}
+
+.previous {
+    text-decoration: none;
+    font-size: 35px;
+    padding: 10px 15px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    color: black;
+    position: absolute;
+    top: 80px;
+    left: 35px;
+    font-weight: 600;
+}

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <a href="#" onclick="back()" class="previous round">&#8249;</a>
+    <div class="card">
+        <div class="image-container">
+            <img [src]="imageSrc" alt="name" class="image">
+            <h4>{{values.name}}</h4>
+        </div>
+        <div class="details">
+            <p>{{values.email}}</p>
+            <p>{{values.phoneNo}}</p>
+        </div>
+        <i class='fas fa-pen' style='font-size:24px' (click)="edit(values)" (mouseenter)="show()" (mouseleave)="show()"></i>
+        <span class="tooltip-text" *ngIf="showToolTip">Edit</span>
+        <div class="social-media">
+            <h3>
+
+                -----Follow-----<br>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </h3>
+        </div>
+    </div>
+</div>

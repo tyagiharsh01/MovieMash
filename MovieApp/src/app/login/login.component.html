@@ -1,0 +1,186 @@
+<div class="container-fluid">
+    <div class="cont1">
+        <a routerLink="#" onclick="history.back()" class="previous round">&#8249;</a>
+        <mat-card class="example-card">
+            <img src="../../assets/logo.jpg" alt="error" width="70px" height="70px" id="logo">
+            <mat-card-header>
+                <mat-card-title>Login/Register</mat-card-title>
+                <mat-card-subtitle>Movie Mash</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab label="Login">
+                        <form [formGroup]="loginData" (ngSubmit)="loginDetails()">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput placeholder="Ex. pat@example.com" id="email1"
+                                    formControlName="email">
+                                <i class="fa fa-envelope" style="margin-left: -30px;"></i>
+                            </mat-form-field>
+                            <div
+                                *ngIf="loginData.get('email')?.invalid && (loginData.get('email')?.dirty || loginData.get('email')?.touched)">
+                                <div *ngIf="loginData.get('email')?.errors?.['required']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Email is Required</p>
+                                    </span>
+                                </div>
+                                <div *ngIf="loginData.get('email')?.errors?.['pattern']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Email should be of required pattern</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput placeholder="*********" id="password1"
+                                    formControlName="password" minlength="4">
+                                <i class="fa fa-key" style="margin-left: -30px;"></i>
+                            </mat-form-field>
+                            <div
+                                *ngIf="loginData.get('password')?.invalid && (loginData.get('password')?.dirty || loginData.get('password')?.touched)">
+                                <div *ngIf="loginData.get('password')?.errors?.['required']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Password is Required</p>
+                                    </span>
+                                </div>
+                                <div *ngIf="loginData.get('password')?.errors?.['minlength']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Password length should be minimum 8</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <a id="f_Pass" (click)="goToF_Pass()">Forgot Password</a>
+                            </div><br>
+                            <button type="submit" class="btn btn-primary" id="btn" color="primary"
+                                [disabled]="!loginData.valid" (click)="loginValidation()">Login</button>
+                        </form>
+                    </mat-tab>
+
+
+
+                    <mat-tab label="Register">
+
+                        <form [formGroup]="registrationData" (ngSubmit)="setValues()">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Name</mat-label>
+                                <input type="text" matInput placeholder="Name" id="name" formControlName="name">
+                                <i class="fa fa-user" style="margin-left: -30px;"></i>
+                            </mat-form-field>
+                            <div *ngIf="name?.errors?.['pattern']">
+                                <span><i class="material-icons">warning</i>
+                                    <p>Name Should contain only alphabets</p>
+                                </span>
+                            </div>
+                            <div *ngIf="name?.errors?.['maxlength']">
+                                <span><i class="material-icons">warning</i>
+                                    <p>Only 30 characters allowed</p>
+                                </span>
+                            </div>
+
+                            <div
+                                *ngIf="registrationData.get('name')?.invalid && (registrationData.get('name')?.dirty || registrationData.get('name')?.touched)">
+                                <div *ngIf="name?.errors?.['required']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Name is <strong>required</strong></p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput placeholder="Ex. pat@example.com" id="email2"
+                                    formControlName="email">
+                                <i class="fa fa-envelope" style="margin-left: -30px;"></i>
+                            </mat-form-field>
+                            <div
+                                *ngIf="registrationData.get('email')?.invalid && (registrationData.get('email')?.dirty || registrationData.get('email')?.touched)">
+                                <div *ngIf="email?.errors?.['emailsAreValidCheck']===false || email?.errors?.['pattern']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Enter valid Email Id</p>
+                                    </span>
+                                </div>
+                                <div *ngIf="email?.errors?.['required']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Email is <strong>required</strong></p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Password</mat-label>
+                                <input type="{{ passwordType }}" matInput placeholder="" id="password2"
+                                    formControlName="password">
+                                <i class="far fa-eye" (click)="togglePasswordVisibility()" [class.fa-eye-slash]="!hide"
+                                    style="margin-left: -30px; cursor: pointer;"></i>
+                            </mat-form-field>
+                            <div
+                                *ngIf="registrationData.get('password')?.invalid && (registrationData.get('password')?.dirty || registrationData.get('password')?.touched)">
+                                <div *ngIf="password?.errors?.['required']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Password is <strong>required</strong></p>
+                                    </span>
+                                </div>
+                                <div *ngIf="password?.errors?.['pattern']">
+                                        <span><i class="material-icons">warning</i>
+                                            <p>Password must match the required pattern <br>i.e Capital letters, small letters, Numbers and Special characters</p>
+                                        </span>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Confirm Password</mat-label>
+                                <input type="password" matInput placeholder="" id="password3"
+                                    formControlName="confirmPassword">
+                                <i class="fa fa-key" style="margin-left: -30px;"></i>
+                            </mat-form-field>
+                            <div *ngIf="confirmPassword?.errors?.['required'] && confirmPassword?.touched">
+                                <span><i class="material-icons">warning</i>
+                                    <p>Confirm Password is Required</p>
+                                </span>
+                            </div>
+                            <div *ngIf="registrationData?.errors?.['mustMatchValidator'] && confirmPassword?.touched">
+                                <span><i class="material-icons">warning</i>
+                                    <p>Password and Confirm Password must be same</p>
+                                </span>
+                            </div>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Phone Number</mat-label>
+                                <input type="text" matInput placeholder="" id="phoneNumber" formControlName="phoneNo">
+                                <i class="fa fa-phone" style="margin-left: -30px;"></i>
+                            </mat-form-field>
+                            <div
+                                *ngIf="registrationData.get('phoneNo')?.invalid && (registrationData.get('phoneNo')?.dirty || registrationData.get('phoneNo')?.touched)">
+                                <div *ngIf="phoneNo?.errors?.['required']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Phone Number is <strong>required</strong></p>
+                                    </span>
+                                </div>
+                                <div *ngIf="phoneNo?.errors?.['pattern']">
+                                    <span><i class="material-icons">warning</i>
+                                        <p>Valid Phone Number contains 10 digits starting with 7/8/9</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="boxDesign">
+                                <label for="image">Profile Picture</label>
+                                <input type="file" accept="images/*" (change)="onImageUpload($event)">
+                                <i class="fa fa-upload" style="margin-left: 20px; color: black;"></i>
+                            </div><br>
+
+                            <button class="btn btn-primary" type="submit" id="btn" color="primary"
+                                [disabled]="!registrationData.valid" (click)="registeration()">Register</button>
+                        </form>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="cont2">
+        <h1>New Here?</h1>
+        <p>Sign up and discover a great amount of new opportunities!</p>
+        <a contenteditable="true" href="#" id="btn2">Register</a>
+    </div>
+</div>

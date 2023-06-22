@@ -1,0 +1,251 @@
+   nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+    background-color: crimson;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: glowing 2s ease-in-out infinite;
+  }
+  
+  .logo-icon i {
+    font-size: 32px;
+    color: #ffffff;
+  }
+  
+  .logo-text {
+    font-family: "Arial", sans-serif;
+    font-size: 28px;
+    color: crimson;
+    margin: 0;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in 1s ease forwards, scale 1s ease 1s forwards;
+  }
+  
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 5px 1px crimson;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px crimson;
+    }
+    100% {
+      box-shadow: 0 0 5px 1px crimson;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scale {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  .searchBar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #s_icon {
+    font-size: 22px;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+
+  #img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .img-container{
+    margin-right: 100px;
+  }
+  
+  .dropdown:hover {
+    padding: 1px;
+    border-radius: 10px;
+  }
+  
+  .search-form-container {
+    padding: 10px;
+    background-color: transparent;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form-control {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 300px;
+    background-color: black;
+    color: white;
+  }
+  
+  #s_btn {
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+  
+  #dropdown-menu1 {
+    padding: 15px;
+    min-width: 350px;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .dropdown-menu{
+    margin-left: -20px;
+  }
+
+  @media screen and (max-width: 1500px) {
+  .search-form-container {
+    padding: 2px;
+    position: absolute;
+    top: 20px;
+    left: -180px;
+    width: 200px;
+  }
+  #s_btn{
+    font-size: 12px;
+    padding: 5px;
+    display: inline-block;
+    top: -45px;
+    left: 200px;
+  }
+ 
+}
+
+@media screen and (max-width: 900px) {
+  .img-container{
+    margin-right: 70px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .img-container{
+    margin-right: 60px;
+  }
+  .logo-text{
+    font-size: 18px;
+  }
+  .s_icon{
+    font-size: 15px;
+  }
+  .logo-icon{
+    width: 30px;
+    height: 30px;
+  }
+  .logo-icon i{
+    font-size: 20px;
+    padding: 0px;
+  }
+  .dropdown-menu{
+    padding: 2px;
+    font-size: 13px;
+  }
+}
+
+  @media screen and (max-width: 500px) {
+    .img-container{
+      margin-right: 30px;
+    }
+
+    .dropdown-menu{
+      padding: 1px;
+      font-size: 11px;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+    }
+    .logo-icon i {
+      font-size: 20px;
+    }
+    .search-form-container {
+      padding: 2px;
+      position: absolute;
+      top: 20px;
+      left: -180px;
+      width: 200px;
+    }
+    #s_btn{
+      font-size: 12px;
+      padding: 5px;
+      display: inline-block;
+      top: -45px;
+      left: 200px;
+    }
+  }
+  
+  @media screen and (max-width: 365px) {
+    .logo-text {
+      font-size: 12px;
+    }
+    #s_icon {
+      font-size: 15px;
+    }
+    .search-form-container {
+      padding: 2px;
+      position: relative;
+      top: 10px;
+      left: -110px;
+      width: 200px;
+    }
+    #s_btn{
+      font-size: 12px;
+      padding: 5px;
+      display: inline-block;
+      top: 0px;
+      left: 3px;
+    }
+    .input-group {
+      gap: 3px;
+    }
+    .form-control {
+      padding: 3px;
+      width: 100px;
+    }
+  }
+  

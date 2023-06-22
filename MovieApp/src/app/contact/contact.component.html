@@ -1,0 +1,179 @@
+<!-- <div class="body">
+  <a routerLink="#" onclick="history.back()" class="previous round">&#8249;</a>
+  <div class="container">
+    <header>
+      <h1>Contact Us</h1>
+      <p>
+        Please complete the quick form below. Your message will be confidentially sent to Movie Mash team. If forms aren't your thing, send us email, or just call us at 123-456-78901548 
+      </p>
+    </header>
+    <div class="content">
+      <div class="content-form">
+        <section>
+          <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+          <h2>Address</h2>
+          <p>
+            Near-Syndicate Bank,<br>
+            Mahatma Gandhi Road,
+            Dickenson Road,<br>
+            Bengaluru, Karnataka 560042
+          </p>
+        </section>
+
+        <section>
+          <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+          <h2>Phone</h2>
+          <p>123-456-78901548</p>
+        </section>
+
+        <section>
+          <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+          <h2>Email</h2>
+          <p>moviemash2023@gmail.com</p>
+        </section>
+      </div>
+    </div>
+
+    <form [formGroup]="contactForm" class="contact-form">
+      <div class="form">
+        <div class="right">
+          <div class="contact-form">
+            <label class="form-label">Enter Full Name</label>
+            <input type="text" formControlName="fullName" placeholder="Enter full name" required>
+            <p class="error" *ngIf="fullName?.errors?.['required'] && fullName?.touched">
+              Full Name is required.
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <label class="form-label">Enter Email</label>
+            <input type="email" formControlName="userEmail" placeholder="Enter your email" required>
+            <p class="error" *ngIf="userEmail?.errors?.['required'] && userEmail?.touched">
+              Email is required.
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <label class="form-label">Enter the Message</label>
+            <textarea name="text" formControlName="text" style="width: 500px"></textarea>
+            <p class="error" *ngIf="text?.errors?.['required'] && text?.touched">
+              Message is required.
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <button type="submit" name="submit"  [disabled]="contactForm.invalid" (click)="onSubmit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="media">
+      <ul>
+        <li><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></li>
+        <li><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></li>
+        <li><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></li>
+        <li><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="body">
+  <a routerLink="#" onclick="history.back()" class="previous round">&#8249;</a>
+  <div class="container">
+    <header>
+      <h1>Contact Us</h1>
+      <p>
+        Mobile apps have the advantage of utilizing features of a mobile device like a camera, contact list, GPS, phone
+        calls, accelerometer, compass, etc. Such device features, when used within an app, can make the user experience
+        interactive and fun.
+      </p>
+    </header>
+    <div class="content">
+      <div class="content-form">
+        <section>
+          <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+          <h2>Address</h2>
+          <p>
+            Address: Near-Syndicate Bank,<br>
+            Mahatma Gandhi Road,
+            Dickenson Road,<br>
+            Bengaluru, Karnataka 560042
+          </p>
+        </section>
+
+        <section>
+          <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+          <h2>Phone</h2>
+          <p>123-456-78901548</p>
+        </section>
+
+        <section>
+          <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+          <h2>Email</h2>
+          <p>moviemash2023@gmail.com</p>
+        </section>
+      </div>
+    </div>
+
+    <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="onSubmit()">
+      <div class="form">
+        <div class="right">
+          <div class="contact-form">
+            <label class="form-label">Enter Full Name</label>
+            <input type="text" formControlName="fullName" placeholder="Enter full name" required>
+            <p class="error" *ngIf="fullName?.errors?.['required'] && fullName?.touched">
+              Full Name is required.
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <label class="form-label">Enter Email</label>
+            <input type="email" formControlName="userEmail" placeholder="Enter your email" required>
+            <p class="error" *ngIf="userEmail?.errors?.['required'] && userEmail?.touched">
+              Email is required.
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <label class="form-label">Enter the Message</label>
+            <textarea name="text" formControlName="text"></textarea>
+            <p class="error" *ngIf="text?.errors?.['required'] && text?.touched">
+              Message is required.
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <button type="submit" name="submit" id="btn" [disabled]="contactForm.invalid" (click)="contact()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="media">
+      <ul>
+        <li><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></li>
+        <li><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></li>
+        <li><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></li>
+        <li><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+  </div>
+</div>

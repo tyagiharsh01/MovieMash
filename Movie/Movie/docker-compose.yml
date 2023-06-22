@@ -1,0 +1,94 @@
+version: "3.9"
+services:
+  mysqlservice:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    container_name: mysql-container
+    networks:
+      - Movie-network
+    environment:
+      MYSQL_ROOT_PASSWORD: 123@Har5h
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: 123@Har5h
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  mongodbservice:
+    image: mongo:latest
+    container_name: mongo-container
+    networks:
+      - Movie-network
+    ports:
+      - "27017:27017"
+
+  movieeurekaservice:
+    container_name: movie-eureka-service
+    build: MovieEureka/
+    networks:
+      - Movie-network
+    ports:
+      - "8761:8761"
+    restart: always
+
+  movieappgateway:
+    container_name: moveapp-gateway
+    build: Movie-App-Gateway/
+    networks:
+      - Movie-network
+    ports:
+      - "4040:4040"
+    restart: always
+
+  userauthenticationservice:
+    container_name: user-authentication-service
+    build: User-Authentication/
+    networks:
+      - Movie-network
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysqlservice
+    restart: always
+
+  movieappservice:
+    container_name: movie-app-service
+    build: Movie-App/
+    networks:
+      - Movie-network
+    ports:
+      - "8804:8804"
+    depends_on:
+      - mongodbservice
+    restart: always
+
+  emailsenderservice:
+    container_name: email-sender
+    build: email-sender/
+    networks:
+      - Movie-network
+    ports:
+      - "8889:8889"
+    restart: always
+
+  contactemailsenderservice:
+    container_name: contact-email
+    build: ContactEmail/
+    networks:
+      - Movie-network
+    ports:
+      - "8890:8890"
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:latest
+    container_name: rabbit-container
+    networks:
+      - Movie-network
+    ports:
+      - "5672:5672"  # AMQP port
+      - "15672:15672"  # RabbitMQ management console port
+    restart: always
+
+networks:
+  Movie-network:
+    driver: bridge

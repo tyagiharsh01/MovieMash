@@ -1,0 +1,13 @@
+.container{
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: whitesmoke;
+}
+#wild{
+    color: blue;
+    cursor: pointer;
+}
