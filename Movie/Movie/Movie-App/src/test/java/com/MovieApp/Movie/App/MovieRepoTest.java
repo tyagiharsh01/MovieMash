@@ -68,7 +68,7 @@ public class MovieRepoTest {
        userRepository.save(user);
        List<User> userList = userRepository.findAll();
        assertEquals(3,userList.size());
-//        assertNotEquals(true,userList.isEmpty());
-//    }
-//
-//}
+       assertNotEquals(true,userList.isEmpty());
+   }
+
+}
